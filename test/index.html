@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script type="text/javascript" charset="utf-8" src="../lib/prototype.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../lib/scriptaculous.js?load=effects"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/lazyloader.js"></script>
+
+	<title>index</title>
+	
+	<style type="text/css" media="screen">
+		div#scrollable {
+			overflow: scroll;
+			width: 300px;
+			height: 200px;
+		}
+		
+		div#scrollable img {
+			display: block;
+			margin-bottom: 100px;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="scrollable">
+	<img src="images/1.gif"/>
+	<img src="images/2.gif"/>
+	<img src="images/3.gif"/>
+	<img src="images/4.gif"/>
+	<img src="images/5.gif"/>
+	<img src="images/6.gif"/>
+	<img src="images/7.gif"/>
+	<img src="images/8.png"/>
+	<img src="images/9.png"/>
+	<img src="images/10.png"/>
+	<img src="images/11.png"/>
+	<img src="images/12.png"/>
+	<img src="images/13.png"/>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	var lazy = new LazyLoader("scrollable", { placeHolderImage: "images/blank.gif" });
+</script>
+
+</body>
+</html>
