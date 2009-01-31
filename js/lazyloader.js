@@ -5,8 +5,6 @@ Requirements:
  - LazyLoader needs to be called on dom:loaded or at the bottom of the HTML page.
  - placeHolderImage option is the image to use when an image hasn't be loaded yet.
    It's best to use a placeHolder image that is the same size as the original image.
- - relativeContainer is the container that holds the images, the position of the images
-   should be relative to this container.
  - threshold is the amount of pixels to check ahead (so if threshold is 100, then
    it'll check 100 pixels to the left, right, top and bottom of the relativeContainer)
  - You can attach the LazyLoader.update function to an onScroll event to attempt to load images
@@ -16,7 +14,6 @@ Requirements:
 
 var LazyLoader = Class.create({
     options: {
-        relativeContainer: null,
         placeHolderImage: "",
         threshold: 0
     },
