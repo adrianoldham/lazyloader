@@ -25,7 +25,10 @@ var LazyLoader = Class.create({
         this.container = $(container);
         
         // die gracefully
-        if (this.container == null) return;
+        if (!this.container || Prototype.Browser.WebKit) {
+            this.container = null;
+            return;
+        }
         
         this.images = this.container.getElementsBySelector('img');
         
