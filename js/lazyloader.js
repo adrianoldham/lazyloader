@@ -87,9 +87,9 @@ LazyLoader.Image = Class.create({
     /* Returns true if the specified position is in the specified bounding box */    
     checkPositionIsInDimensions: function(position, dimensions) {
         // check if the point is inside the bounding box
-        return  position.left >= -this.options.threshold &&
+        return  position.left > -this.options.threshold &&
                 position.left < dimensions.width + this.options.threshold &&
-                position.top >= -this.options.threshold &&
+                position.top > -this.options.threshold &&
                 position.top < dimensions.height + this.options.threshold;
     },
     
