@@ -23,17 +23,22 @@ var LazyLoader = Class.create({
         
         // use selector to grab the images
         this.container = $(container);
+        
+        // die gracefully
+        if (this.container == null) return;
+        
         this.images = this.container.getElementsBySelector('img');
         
         this.lazyLoadedImaged = this.images.map(function(image) {
             return new LazyLoader.Image(image, this.options, this);
         }.bind(this));
-        
-        // update on scroll
-		this.container.observe('scroll', this.update.bind(this));
 		
-        // update on load!
-        Event.observe(window, 'load', this.update.bind(this));
+        // update on load only if using scroll!
+        if (this.container.getStyle('overflow') == "scroll") {
+            // update on scroll
+    		this.container.observe('scroll', this.update.bind(this));
+            Event.observe(window, 'load', this.update.bind(this));
+        }
     },
     
     /* Call this with an event or whenever you want to attempt to load visible image */
